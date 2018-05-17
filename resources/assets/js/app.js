@@ -15,8 +15,13 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+import Vue from 'vue';
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
-const app = new Vue({
-    el: '#app'
+Vue.use(ElementUI);
+Vue.component('resource-bar', require('./components/ResourceBar.vue'));
+
+new Vue({
+    el: '#app',
 });
