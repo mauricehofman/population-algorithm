@@ -20,7 +20,7 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.use(ElementUI);
-Vue.component('resource-bar', require('./components/ResourceBar.vue'));
+Vue.component('resource', require('./components/Resource.vue'));
 
 new Vue({
     el: '#app',
