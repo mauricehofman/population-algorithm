@@ -1,6 +1,8 @@
 <?php
 
-class BuildingsTableSeeder extends AbstractDatabaseSeeder
+use Illuminate\Database\Seeder;
+
+class BuildingsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -9,6 +11,6 @@ class BuildingsTableSeeder extends AbstractDatabaseSeeder
      */
     public function run()
     {
-        factory(\App\Building::class, 5)->create();
+        factory(\App\Building::class, 100)->create();
     }
 }

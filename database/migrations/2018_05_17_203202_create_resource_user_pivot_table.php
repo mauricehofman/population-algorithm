@@ -4,7 +4,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBuildingUserPivotTable extends Migration
+class CreateResourceUserPivotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,16 @@ class CreateBuildingUserPivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('building_user', function (Blueprint $table) {
-            $table->unsignedInteger('building_id')->index();
+        Schema::create('resource_user', function (Blueprint $table) {
+            $table->unsignedInteger('resource_id')->index();
             $table->unsignedInteger('user_id')->index();
-            $table->unsignedInteger('level')->default(1);
+            $table->bigInteger('amount')->default(500);
 
-            $table->foreign('building_id')->references('id')->on('buildings');
+            $table->foreign('resource_id')->references('id')->on('resources');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->primary(['building_id', 'user_id']);
+
+            $table->primary(['resource_id', 'user_id']);
+
         });
     }
 
@@ -31,6 +33,6 @@ class CreateBuildingUserPivotTable extends Migration
      */
     public function down()
     {
-        Schema::drop('building_user');
+        Schema::dropIfExists('resource_user');
     }
 }

@@ -18,6 +18,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Resource whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Resource whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Resource whereUserId($value)
+ * @property string $name
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Resource whereName($value)
  */
 class Resource extends Model
 {

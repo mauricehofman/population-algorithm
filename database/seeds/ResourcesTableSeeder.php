@@ -1,6 +1,8 @@
 <?php
 
-class ResourcesTableSeeder extends AbstractDatabaseSeeder
+use Illuminate\Database\Seeder;
+
+class ResourcesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -9,8 +11,6 @@ class ResourcesTableSeeder extends AbstractDatabaseSeeder
      */
     public function run()
     {
-        factory(\App\Resource::class)->create();
-
-        $this->handleTestUser(\App\Resource::class);
+        factory(\App\Resource::class, 100)->create();
     }
 }
